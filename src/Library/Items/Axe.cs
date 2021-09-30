@@ -1,13 +1,7 @@
 namespace RoleplayGame
 {
-    public class Axe: IAttackItem
+    public class Axe: Item
     {
-        public int AttackValue 
-        {
-            get
-            {
-                return 25;
-            } 
-        }
+        public override int AttackValue => 25;
     }
 }

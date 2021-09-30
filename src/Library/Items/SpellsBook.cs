@@ -1,43 +1,22 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace RoleplayGame
 {
-    public class SpellsBook: IMagicalAttackItem, IMagicalDefenseItem
+    public class SpellsBook: MagicalItem
     {
-        private List<ISpell> spells = new List<ISpell>();
+        private List<Spell> spells = new List<Spell>();
         
-        public int AttackValue
-        {
-            get
-            {
-                int value = 0;
-                foreach (ISpell spell in this.spells)
-                {
-                    value += spell.AttackValue;
-                }
-                return value;
-            }
-        }
+        public override int AttackValue => this.spells.Aggregate(0, (total, el) => total + el.AttackValue);
 
-        public int DefenseValue
-        {
-            get
-            {
-                int value = 0;
-                foreach (ISpell spell in this.spells)
-                {
-                    value += spell.DefenseValue;
-                }
-                return value;
-            }
-        }
+        public override int DefenseValue => this.spells.Aggregate(0, (total, el) => total + el.DefenseValue);
 
-        public void AddSpell(ISpell spell)
+        public void AddSpell(Spell spell)
         {
             this.spells.Add(spell);
         }
 
-        public void RemoveSpell(ISpell spell)
+        public void RemoveSpell(Spell spell)
         {
             this.spells.Remove(spell);
         }

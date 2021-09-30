@@ -1,21 +1,9 @@
 namespace RoleplayGame
 {
-    public class SpellOne: ISpell
+    public class SpellOne: Spell
     {
-        public int AttackValue
-        {
-            get
-            {
-                return 70;
-            }
-        }
+        public override int AttackValue => 70;
 
-        public int DefenseValue
-        {
-            get
-            {
-                return 70;
-            }
-        }
+        public override int DefenseValue => 70;
     }
 }
