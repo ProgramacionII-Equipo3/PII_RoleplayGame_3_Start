@@ -1,14 +1,13 @@
 namespace RoleplayGame
 {
-    public class Cyclop: Enemy
+    public class Cyclops: Enemy
     {
-        public override int VictoryPoints {get; }
+        public override int VictoryPoints => 3;
         
         public Cyclop(string name) : base(name)
         {
             this.AddItem(new Shield());
             this.AddItem(new Axe());
-            this.VictoryPoints=1;
         }
 
     }

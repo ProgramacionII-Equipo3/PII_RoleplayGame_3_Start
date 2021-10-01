@@ -1,6 +1,6 @@
 namespace RoleplayGame
 {
-    public class Skeleton : Enemy
+    public class Skeleton : MagicEnemy
     {
         public override int VictoryPoints => 1;
 
