@@ -8,6 +8,7 @@ namespace RoleplayGame
         {
             this.VictoryPoints = 2;
             this.AddItem(new Sword());
+            this.AddItem(new Helmet());
         }
 
     }

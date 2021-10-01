@@ -29,6 +29,10 @@ namespace Program
 
             Skeleton skeleton = new Skeleton("Juan");
             skeleton.Attack(gimli);
+            Console.WriteLine($"Gimli has {gimli.Health}");
+
+            gimli.Attack(skeleton);
+            Console.WriteLine($"Skeleton has {skeleton.Health}");
         }
     }
 }
