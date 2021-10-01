@@ -26,6 +26,9 @@ namespace Program
             gimli.Cure();
 
             Console.WriteLine($"Someone cured Gimli. Gimli now has ❤️ {gimli.Health}");
+
+            Skeleton skeleton = new Skeleton("Juan");
+            skeleton.Attack(gimli);
         }
     }
 }
