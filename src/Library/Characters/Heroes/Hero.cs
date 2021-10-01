@@ -6,7 +6,6 @@ namespace RoleplayGame
         public Hero(string name): base(name) {}
 
         private int victoryPoints = 0;
-
         public int VictoryPoints {
             get => victoryPoints;
             private set
@@ -14,6 +13,11 @@ namespace RoleplayGame
                 if(victoryPoints < value)
                 {
                     victoryPoints = value;
+                    if(victoryPoints >= 5)
+                    {
+                        Cure();
+                        victoryPoints %= 5;
+                    }
                 }
             }
         }
