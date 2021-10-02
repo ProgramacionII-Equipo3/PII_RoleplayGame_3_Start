@@ -18,6 +18,8 @@ namespace RoleplayGame
             private set => health = value < 0 ? 0 : value;
         }
 
+        public bool IsAlive => health > 0;
+
         public virtual int AttackValue { get => this.items.Aggregate(0, (total, el) => total + el.AttackValue); }
 
         public virtual int DefenseValue { get => this.items.Aggregate(0, (total, el) => total + el.DefenseValue); }
