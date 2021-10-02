@@ -24,14 +24,14 @@ namespace RoleplayGame
 
         public virtual int DefenseValue { get => this.items.Aggregate(0, (total, el) => total + el.DefenseValue); }
 
-        private List<Item> items = new List<Item>();
+        private List<NonMagicalItem> items = new List<NonMagicalItem>();
 
-        public void AddItem(Item item)
+        public void AddItem(NonMagicalItem item)
         {
             this.items.Add(item);
         }
 
-        public void RemoveItem(Item item)
+        public void RemoveItem(NonMagicalItem item)
         {
             this.items.Remove(item);
         }

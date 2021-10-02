@@ -8,12 +8,12 @@ namespace RoleplayGame
     {
         protected List<MagicalItem> magicalItems { get; }
 
-        public void AddMagicalItem(MagicalItem item)
+        public void AddItem(MagicalItem item)
         {
             this.magicalItems.Add(item);
         }
 
-        public void RemoveMagicalItem(MagicalItem item)
+        public void RemoveItem(MagicalItem item)
         {
             this.magicalItems.Remove(item);
         }

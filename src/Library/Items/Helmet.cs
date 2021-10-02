@@ -1,6 +1,6 @@
 namespace RoleplayGame
 {
-    public class Helmet: Item
+    public class Helmet: NonMagicalItem
     {
         public override int DefenseValue => 18;
     }

@@ -1,6 +1,6 @@
 namespace RoleplayGame
 {
-    public class Staff: Item
+    public class Staff: NonMagicalItem
     {
         public override int AttackValue => 100;
 

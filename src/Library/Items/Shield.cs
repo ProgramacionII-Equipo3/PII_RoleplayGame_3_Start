@@ -1,6 +1,6 @@
 namespace RoleplayGame
 {
-    public class Shield: Item
+    public class Shield: NonMagicalItem
     {
         public override int DefenseValue => 14;
     }

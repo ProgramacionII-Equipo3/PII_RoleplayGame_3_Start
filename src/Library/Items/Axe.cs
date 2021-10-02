@@ -1,6 +1,6 @@
 namespace RoleplayGame
 {
-    public class Axe: Item
+    public class Axe: NonMagicalItem
     {
         public override int AttackValue => 25;
     }
