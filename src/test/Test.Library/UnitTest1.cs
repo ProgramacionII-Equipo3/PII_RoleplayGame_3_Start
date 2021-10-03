@@ -16,22 +16,19 @@ namespace Test.Library
         }
         
         [Test]
-        public void EncounterTest()
+        public void ItemEquiped ()
         {
-            Knight caballero1 = new Knight ("El caballero ");
-            Archer arquero1 = new Archer ("Arquero");
-            Hero[] heroes = new Hero[] { archer, knight };
-            Cyclops ciclope1 = new Cyclops ("Cyclope");
-            Golem golem1 = new Golem ("El golem");
-            Enemy[] enemies = new Enemy[] { cyclops, golem };
-            Encounter encounter = new Encounter(heroes, enemies);
-            encounter.DoEncounter();
+            Knight caballero = new Knight ("caballero");
+            int damageExpected = 20;
+            int defenseExpected = 39;
+            Assert.AreEqual(damageExpected, caballero.AttackValue);
+            Assert.AreEqual(defenseExpected, caballero.DefenseValue);
 
-
-            
-
-
-
+            Cyclops ciclope = new Cyclops ("ciclope");
+            int damageExpected = 25;
+            int defenseExpected = 14;
+            Assert.AreEqual(damageExpected, ciclope.AttackValue);
+            Assert.AreEqual(defenseExpected, ciclope.DefenseValue);
         }
     }
 }
