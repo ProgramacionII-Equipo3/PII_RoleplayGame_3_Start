@@ -25,8 +25,10 @@ namespace RoleplayGame
         // Returns whether the enemy was defeated
         public bool Attack(Enemy target)
         {
+            if(!this.IsAlive) return false;
+
             target.ReceiveAttack(this.AttackValue);
-            if(target.Health == 0)
+            if(!target.IsAlive)
             {
                 victoryPoints += target.VictoryPoints;
                 return true;
