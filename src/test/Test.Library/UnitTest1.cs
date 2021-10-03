@@ -96,7 +96,7 @@ namespace Test.Library
             Assert.AreEqual(wizardExpected, wizard.Health);
 
             int cyclopsExpected = 0;
-            int dragonExpected = 44;
+            int dragonExpected = 24;
             int golemExpected = 100;
             int skeletonExpected = 100;
             Assert.AreEqual(cyclopsExpected, cyclops.Health);
