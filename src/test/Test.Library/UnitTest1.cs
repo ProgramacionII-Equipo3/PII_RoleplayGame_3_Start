@@ -67,5 +67,28 @@ namespace Test.Library
             Assert.AreEqual(healthExpected, batman.Health);
             
         }
+
+        [Test]
+        public void EncounterTest()  // Test for encounter between enemies 
+        {
+            Archer archer = new Archer("Archer");
+            Dwarf dwarf = new Dwarf("Dwarf");
+            Knight knight = new Knight("Knight");
+            Wizard wizard = new Wizard("Wizard");
+            Hero[] heroes = new Hero[] { archer, dwarf, knight, wizard };
+            
+            Cyclops cyclops = new Cyclops("Cyclops");
+            Dragon dragon = new Dragon("Dragon");
+            Golem golem = new Golem("Golem");
+            Skeleton skeleton = new Skeleton("Skeleton");
+            Enemy[] enemies = new Enemy[] { cyclops, dragon, golem, skeleton };
+
+            Encounter encounter = new Encounter(heroes, enemies);
+            encounter.DoEncounter();
+
+            
+            
+        }
+        
     }
 }
