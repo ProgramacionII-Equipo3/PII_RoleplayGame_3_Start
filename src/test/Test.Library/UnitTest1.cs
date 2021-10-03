@@ -103,10 +103,29 @@ namespace Test.Library
             Assert.AreEqual(dragonExpected, dragon.Health);
             Assert.AreEqual(golemExpected, golem.Health);
             Assert.AreEqual(skeletonExpected, skeleton.Health);
-
-            
-            
         }
-        
+
+        [Test] 
+        public void CureTest()  // Test if the hero win the VP points for kill an enemy, and when the hero get 5 VP, it has to be cured 
+        {
+            Cyclops cyclops = new Cyclops("Cyclops");
+            Cyclops cyclops2 = new Cyclops("Cyclops");
+            Archer archer = new Archer("Archer");
+            cyclops2.Attack(archer);
+            while(cyclops.Health > 0)
+            {
+                archer.Attack(cyclops);
+            }
+            while(cyclops2.Health > 0)
+            {
+                archer.Attack(cyclops2);
+            }
+            
+            int archerExpectedVP = 1;
+            int archerHealthExpected = 100;
+
+            Assert.AreEqual(archerExpectedVP, archer.VictoryPoints);
+            Assert.AreEqual(archerHealthExpected, archer.Health);
+        }    
     }
 }
