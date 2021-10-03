@@ -23,7 +23,7 @@ namespace Test.Library
             Dwarf dwarf = new Dwarf("Dwarf");
 
             int dwarfExpected = 0;
-            int wizardExpected = 100;
+            int wizardExpected = 98;
             dwarf.ReceiveAttack(wizard.AttackValue);
             wizard.ReceiveAttack(dwarf.AttackValue);
            
@@ -85,6 +85,24 @@ namespace Test.Library
 
             Encounter encounter = new Encounter(heroes, enemies);
             encounter.DoEncounter();
+
+            int archerExpected = 0;
+            int dwarfExpected = 0;
+            int knightExpected = 0;
+            int wizardExpected = 0;
+            Assert.AreEqual(archerExpected, archer.Health);
+            Assert.AreEqual(dwarfExpected, dwarf.Health);
+            Assert.AreEqual(knightExpected, knight.Health);
+            Assert.AreEqual(wizardExpected, wizard.Health);
+
+            int cyclopsExpected = 0;
+            int dragonExpected = 44;
+            int golemExpected = 100;
+            int skeletonExpected = 100;
+            Assert.AreEqual(cyclopsExpected, cyclops.Health);
+            Assert.AreEqual(dragonExpected, dragon.Health);
+            Assert.AreEqual(golemExpected, golem.Health);
+            Assert.AreEqual(skeletonExpected, skeleton.Health);
 
             
             
