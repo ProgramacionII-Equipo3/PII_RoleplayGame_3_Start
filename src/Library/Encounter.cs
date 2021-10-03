@@ -27,7 +27,7 @@ namespace RoleplayGame
         }
 
         public bool NextTurn() =>
-            IsEnemyTurn ? nextEnemyTurn() : nextHeroTurn();
+            IsEnemyTurn ? nextEnemyTurn() : nextHeroTurn(); 
 
         private bool nextEnemyTurn()
         {

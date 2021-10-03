@@ -9,8 +9,10 @@ namespace RoleplayGame
 
         public bool Attack(Hero target)
         {
+            if(!this.IsAlive) return false;
+
             target.ReceiveAttack(this.AttackValue);
-            return target.Health == 0;
+            return !target.IsAlive;
         }
     }
 }

@@ -5,18 +5,18 @@ namespace RoleplayGame
     {
         public Hero(string name): base(name) {}
 
-        private int victoryPoints = 0;
+        private int _victoryPoints = 0;
         public int VictoryPoints {
-            get => victoryPoints;
+            get => _victoryPoints;
             private set
             {
-                if(victoryPoints < value)
+                if(_victoryPoints < value)
                 {
-                    victoryPoints = value;
-                    if(victoryPoints >= 5)
+                    _victoryPoints = value;
+                    if(_victoryPoints >= 5)
                     {
                         Cure();
-                        victoryPoints %= 5;
+                        _victoryPoints %= 5;
                     }
                 }
             }
@@ -25,10 +25,12 @@ namespace RoleplayGame
         // Returns whether the enemy was defeated
         public bool Attack(Enemy target)
         {
+            if(!this.IsAlive) return false;
+
             target.ReceiveAttack(this.AttackValue);
-            if(target.Health == 0)
+            if(!target.IsAlive)
             {
-                victoryPoints += target.VictoryPoints;
+                VictoryPoints += target.VictoryPoints;
                 return true;
             }
             return false;
